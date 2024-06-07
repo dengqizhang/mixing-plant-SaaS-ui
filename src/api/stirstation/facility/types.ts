@@ -7,26 +7,22 @@ export interface FacilityVO {
   /**
    * 设备编号
    */
-  facility
-Code: string;
+  facilityCode: string;
 
   /**
    * 设备名称
    */
-  facility
-Name: string;
+  facilityName: string;
 
   /**
    * 设备规格
    */
-  facility
-Specification: string;
+  facilitySpecification: string;
 
   /**
    * 设备标识
    */
-  facility
-Identifier: string | number;
+  facilityIdentifier: string | number;
 
 }
 
@@ -39,26 +35,22 @@ export interface FacilityForm extends BaseEntity {
   /**
    * 设备编号
    */
-  facility
-Code?: string;
+  facilityCode?: string;
 
   /**
    * 设备名称
    */
-  facility
-Name?: string;
+  facilityName?: string;
 
   /**
    * 设备规格
    */
-  facility
-Specification?: string;
+  facilitySpecification?: string;
 
   /**
    * 设备标识
    */
-  facility
-Identifier?: string | number;
+  facilityIdentifier?: string | number;
 
 }
 
@@ -67,26 +59,22 @@ export interface FacilityQuery extends PageQuery {
   /**
    * 设备编号
    */
-  facility
-Code?: string;
+  facilityCode?: string;
 
   /**
    * 设备名称
    */
-  facility
-Name?: string;
+  facilityName?: string;
 
   /**
    * 设备规格
    */
-  facility
-Specification?: string;
+  facilitySpecification?: string;
 
   /**
    * 设备标识
    */
-  facility
-Identifier?: string | number;
+  facilityIdentifier?: string | number;
 
     /**
      * 日期范围参数

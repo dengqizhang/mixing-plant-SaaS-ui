@@ -5,7 +5,7 @@
       <div v-show="showSearch" class="mb-[10px]">
         <el-card shadow="hover">
           <el-form ref="queryFormRef" :model="queryParams" :inline="true">
-            <el-form-item label="设备编号" prop="facilityCode">
+            <el-form-item label="设备编号" prop="facilityNumber">
               <el-input v-model="queryParams.facilityCode" placeholder="请输入设备编号" clearable @keyup.enter="handleQuery" />
             </el-form-item>
             <el-form-item label="设备名称" prop="facilityName">
@@ -54,7 +54,7 @@
       <el-table v-loading="loading" :data="facilityList" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" align="center" />
         <el-table-column label="设备表主键" align="center" prop="id" v-if="false" />
-        <el-table-column label="设备编号" align="center" prop="facilityCode" />
+        <el-table-column label="设备编号" align="center" prop="facilityNumber" />
         <el-table-column label="设备名称" align="center" prop="facilityName" />
         <el-table-column label="设备规格" align="center" prop="facilitySpecification" />
         <el-table-column label="设备标识" align="center" prop="facilityIdentifier" />
@@ -78,8 +78,8 @@
     <!-- 添加或修改设备管理对话框 -->
     <el-dialog :title="dialog.title" v-model="dialog.visible" width="500px" append-to-body>
       <el-form ref="facilityFormRef" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="设备编号" prop="facilityCode">
-          <el-input v-model="form.facilityCode" placeholder="请输入设备编号" />
+        <el-form-item label="设备编号" prop="facilityNumber">
+          <el-input v-model="form.facilityNumber" placeholder="请输入设备编号" />
         </el-form-item>
         <el-form-item label="设备名称" prop="facilityName">
           <el-input v-model="form.facilityName" placeholder="请输入设备名称" />
@@ -102,8 +102,8 @@
 </template>
 
 <script setup name="Facility" lang="ts">
-import { listFacility, getFacility, delFacility, addFacility, updateFacility } from '@/api/facility/facility';
-import { FacilityVO, FacilityQuery, FacilityForm } from '@/api/facility/facility/types';
+import { listFacility, getFacility, delFacility, addFacility, updateFacility } from '@/api/stirstation/facility';
+import { FacilityVO, FacilityQuery, FacilityForm } from '@/api/stirstation/facility/types';
 
 const { proxy } = getCurrentInstance() as ComponentInternalInstance;
 
@@ -126,7 +126,7 @@ const dialog = reactive<DialogOption>({
 
 const initFormData: FacilityForm = {
   id: undefined,
-  facilityCode: undefined,
+  facilityNumber: undefined,
   facilityName: undefined,
   facilitySpecification: undefined,
   facilityIdentifier: undefined
@@ -136,7 +136,7 @@ const data = reactive<PageData<FacilityForm, FacilityQuery>>({
   queryParams: {
     pageNum: 1,
     pageSize: 10,
-    facilityCode: undefined,
+    facilityNumber: undefined,
     facilityName: undefined,
     facilitySpecification: undefined,
     facilityIdentifier: undefined,
@@ -147,7 +147,7 @@ const data = reactive<PageData<FacilityForm, FacilityQuery>>({
     id: [
       { required: true, message: "设备表主键不能为空", trigger: "blur" }
     ],
-    facilityCode: [
+    facilityNumber: [
       { required: true, message: "设备编号不能为空", trigger: "blur" }
     ],
     facilityName: [

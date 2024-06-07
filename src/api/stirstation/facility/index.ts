@@ -1,6 +1,6 @@
 import request from '@/utils/request';
 import { AxiosPromise } from 'axios';
-import { FacilityVO, FacilityForm, FacilityQuery } from '@/api/facility/facility/types';
+import { FacilityVO, FacilityForm, FacilityQuery } from '@/api/stirstation/facility/types';
 
 /**
  * 查询设备管理列表
