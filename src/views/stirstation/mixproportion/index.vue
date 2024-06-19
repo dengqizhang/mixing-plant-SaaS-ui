@@ -570,6 +570,7 @@ const handleAdd = () => {
   reset();
   dialog.visible = true;
   dialog.title = '新增';
+  getMaterialsList();
 };
 /**获取设备列表 */
 const getFacilityList = async () => {
